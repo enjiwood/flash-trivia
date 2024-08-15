@@ -19,6 +19,8 @@ export default function Home() {
           justifyContent="space-between"
           alignItems="center"
           p={1}
+          pl={3}
+          pr={3}
         >
           <Box>
             <Typography variant="h6" fontFamily="monospace">Menu</Typography>
@@ -68,11 +70,11 @@ export default function Home() {
                   >
                     <Typography fontFamily="monospace" variant="h6">Type answer below:</Typography>
                     <Box borderRadius="15px" backgroundColor="#BFBFBF" height="52%" width="100%">
-                      <TextField fullWidth variant="filled"></TextField>
+                      <TextField fullWidth InputProps={{style : {borderRadius: "15px"}}}></TextField>
                     </Box>
                   </Stack>
                 
-                <Button variant="outlined">GO</Button>
+                <Button variant="filled" sx={{backgroundColor: 'orange', border: '2px solid DarkOrange', boxShadow: '0px 0px 5px DarkOrange'}}>GO</Button>
               </Stack>
             </Box>
           </Stack>
@@ -86,7 +88,7 @@ export default function Home() {
           elevation={6} 
           square 
           borderRadius="15px" 
-          backgroundColor='#BFBFBF' 
+          backgroundColor='#FFFFFF' 
           boxShadow="0px 0px 20px #5F5F5F"
         >
           <Stack
@@ -102,7 +104,7 @@ export default function Home() {
               height="90%"
               direction="column"
             >
-              <Box border="2px solid white" borderRadius="15px" fullWidth height="100%"/>
+              <Box border="2px solid #040404" borderRadius="15px" fullWidth height="100%"/>
             </Stack>
             <Stack
               direction="row"
@@ -110,8 +112,8 @@ export default function Home() {
               alignItems="center"
               spacing={2}
             >
-              <TextField fullWidth></TextField>
-              <Button variant="filled">Send</Button>
+              <TextField fullWidth sx={{border: '2px solid black', borderRadius: '15px'}} InputProps={{style : {borderRadius: "12px"}}}></TextField>
+              <Button variant="filled" sx={{backgroundColor: 'orange', border: '2px solid DarkOrange', boxShadow: '0px 0px 5px DarkOrange'}}>Send</Button>
             </Stack>
           </Stack>
         </Grid>
