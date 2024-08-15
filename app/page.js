@@ -1,95 +1,121 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import { Box, CssBaseline, Grid, Paper, ThemeProvider, Typography, Stack, TextField, Button } from '@mui/material'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Stack 
+      direction="column"
+      width="100vw"
+      height="100vh"
+      backgroundColor='#0F0F0F'
+    >
+      <Box 
+        width="100%"
+        height="8%"
+        backgroundColor="#040404"
+      >
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          p={1}
+        >
+          <Box>
+            <Typography variant="h6" fontFamily="monospace">Menu</Typography>
+          </Box>
+          <Box>
+            <Typography variant="h4" fontFamily="monospace">Flash Trivia</Typography>
+          </Box>
+          <Box>
+            <Typography variant="h6" fontFamily="monospace">Account</Typography>
+          </Box>
+        </Stack>
+      </Box>
+      <Grid container component="main" alignContent="center" sx={{ height: '100vh', width: '100vw'}}>
+        <CssBaseline />
+        <Grid
+          item
+          alignItems="center"
+          justifyContent="center"
+          alignContent="center"
+          m="auto"
+          xs={false}
+          sm={9}
+          sx={{
+            backgroundSize: 'cover',
+            backgroundPosition: 'left',
+            backgroundColor: '#0F0F0F',
+          }}
+        >
+          <Stack
+            direction="column" width="100%" alignContent="center" alignItems="center" spacing={4}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <Typography variant="h3">Front</Typography>
+                  </div>
+                  <div class="flip-card-back">
+                    <Typography variant="h3">Back</Typography>
+                  </div>  
+                </div>
+            </div>
+            <Box borderRadius= "15px" p={2} height="15vh" width="40vw" backgroundColor="#040404" boxShadow="0px 0px 15px #4A4A4A" alignContent="center">
+              <Stack
+                direction="row" height="100%" justifyContent="space-between">
+                  <Stack
+                    direction="column" height="100%" width="80%"
+                  >
+                    <Typography fontFamily="monospace" variant="h6">Type answer below:</Typography>
+                    <Box borderRadius="15px" backgroundColor="#BFBFBF" height="52%" width="100%">
+                      <TextField fullWidth variant="filled"></TextField>
+                    </Box>
+                  </Stack>
+                
+                <Button variant="outlined">GO</Button>
+              </Stack>
+            </Box>
+          </Stack>
+        </Grid>
+        <Grid
+          item
+          xs={false} 
+          sm={3} 
+          md={3} 
+          height="95%"  
+          elevation={6} 
+          square 
+          borderRadius="15px" 
+          backgroundColor='#BFBFBF' 
+          boxShadow="0px 0px 20px #5F5F5F"
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Stack
+            direction="column"
+            fullWidth
+            height="100%"
+            p={2}
+            spacing={2}
+            justifyContent="space-between"
+          >
+            <Stack
+              width="100%"
+              height="90%"
+              direction="column"
+            >
+              <Box border="2px solid white" borderRadius="15px" fullWidth height="100%"/>
+            </Stack>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              spacing={2}
+            >
+              <TextField fullWidth></TextField>
+              <Button variant="filled">Send</Button>
+            </Stack>
+          </Stack>
+        </Grid>
+      </Grid>
+    </Stack>
   );
 }
